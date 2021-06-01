@@ -1,5 +1,5 @@
 {
-    "name": "martin/sentryerrorlogger-plugin",
+    "name": "kosmoskosmos/sentryerrorlogger-plugin",
     "type": "october-plugin",
     "description": "Sentry support for OctoberCMS",
     "homepage": "https://github.com/skydiver/october-plugin-sentryerrorlogger",
