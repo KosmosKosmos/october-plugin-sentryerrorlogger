@@ -2,12 +2,13 @@
 
     namespace KosmosKosmos\SentryErrorLogger;
 
+    use Sentry\ClientBuilder;
+    use Sentry\Monolog\Handler;
+    use Sentry\State\Hub;
     use System\Classes\PluginBase;
     use VojtaSvoboda\ErrorLogger\Models\Settings;
 
     use Log;
-    use Monolog\Handler\RavenHandler;
-    use Raven_Client;
 
     class Plugin extends PluginBase {
 
@@ -84,9 +85,10 @@
                 return $monolog;
             }
 
-            $dsn     = Settings::get('sentry_dsn'  , null);
-            $level   = Settings::get('sentry_level', 100);
-            $handler = new RavenHandler(new Raven_Client($dsn), $level);
+            $dsn = Settings::get('sentry_dsn'  , null);
+            $level = Settings::get('sentry_level', 100);
+            $client = ClientBuilder::create(['dsn' => $dsn])->getClient();
+            $handler = new Handler(new Hub($client), $level);
 
             $monolog->pushHandler($handler);
 
