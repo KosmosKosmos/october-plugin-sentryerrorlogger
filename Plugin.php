@@ -16,9 +16,8 @@
 
         public function pluginDetails() {
             return [
-                'name'        => 'martin.sentryerrorlogger::lang.plugin.name',
-                'description' => 'martin.sentryerrorlogger::lang.plugin.description',
-                'author'      => 'Martin M.',
+                'name'        => 'kosmoskosmos.sentryerrorlogger::lang.plugin.name',
+                'description' => 'kosmoskosmos.sentryerrorlogger::lang.plugin.description',
                 'icon'        => 'icon-bug',
                 'homepage'    => 'https://github.com/skydiver/'
             ];
@@ -40,14 +39,14 @@
                 $widget->addTabFields([
 
                     'sentry_enabled' => [
-                        'tab'     => 'martin.sentryerrorlogger::lang.tab.name',
-                        'label'   => 'martin.sentryerrorlogger::lang.fields.sentry_enabled.label',
+                        'tab'     => 'kosmoskosmos.sentryerrorlogger::lang.tab.name',
+                        'label'   => 'kosmoskosmos.sentryerrorlogger::lang.fields.sentry_enabled.label',
                         'type'    => 'switch'
                     ],
 
                     'sentry_dsn' => [
-                        'tab'      => 'martin.sentryerrorlogger::lang.tab.name',
-                        'label'    => 'martin.sentryerrorlogger::lang.fields.sentry_dsn.label',
+                        'tab'      => 'kosmoskosmos.sentryerrorlogger::lang.tab.name',
+                        'label'    => 'kosmoskosmos.sentryerrorlogger::lang.fields.sentry_dsn.label',
                         'required' => true,
                         'trigger'  => [
                             'action'    => 'show',
@@ -57,8 +56,8 @@
                     ],
 
                     'sentry_level' => [
-                        'tab'      => 'martin.sentryerrorlogger::lang.tab.name',
-                        'label'    => 'martin.sentryerrorlogger::lang.fields.sentry_level.label',
+                        'tab'      => 'kosmoskosmos.sentryerrorlogger::lang.tab.name',
+                        'label'    => 'kosmoskosmos.sentryerrorlogger::lang.fields.sentry_level.label',
                         'required' => true,
                         'type'     => 'dropdown',
                         'options'  => \VojtaSvoboda\ErrorLogger\Models\Settings::getErrorLevelOptions(),
